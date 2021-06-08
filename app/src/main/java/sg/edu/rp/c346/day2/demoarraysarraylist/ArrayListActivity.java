@@ -3,6 +3,7 @@ package sg.edu.rp.c346.day2.demoarraysarraylist;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -10,24 +11,27 @@ import java.util.ArrayList;
 public class ArrayListActivity extends AppCompatActivity {
 
     TextView tv;
+    ArrayList<String> fruits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list);
 
-        tv = findViewById(R.id.textView2);
+        this.setTitle("ArrayList");
+        tv = findViewById(R.id.textView);
 
-        ArrayList<String> fruits = new ArrayList<String>();
-
+        fruits = new ArrayList<String>();
         fruits.add("apple");
         fruits.add("banana");
         fruits.add("cherry");
 
-        String msg = "";
-        for (int i = 0; i < fruits.size(); i++){
-            msg += fruits.get(i) + "\n";
+        String text = "Fruits\n";
+        text += "=====\n";
+
+        for (int i = 0; i < fruits.size(); i++) {
+            text += fruits.get(i) + "\n";
         }
-        System.out.println(msg);
+        tv.setText(text);
     }
 }
